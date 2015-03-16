@@ -46,9 +46,9 @@ if (/(добавлен)+/.test(response)) document.getElementById('name').value=
  // Required: verify that all fileds is not empty. Use encodeURI() to solve some issues about character encoding.
 var pupil= document.getElementById('pupil').value;
 var teacher= document.getElementById('teacher').value;
-if (pupil=="Выберите ученика" && teacher=="Выберите учителя") alert("Необходимо ввести имена ученика и учителя");
-else if (pupil=="Выберите ученика") alert("Необходимо ввести имя ученика");
-else if (teacher=="Выберите учителя") alert("Необходимо ввести имя учителя");
+if (pupil=="Выберите ученика" && teacher=="Выберите учителя") alert("Необходимо ввести имена ученика и учителя.");
+else if (pupil=="Выберите ученика") alert("Необходимо ввести имя ученика.");
+else if (teacher=="Выберите учителя") alert("Необходимо ввести имя учителя.");
 else {
 //encodeURI(document.getElementById('table').value);
 
