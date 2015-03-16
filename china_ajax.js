@@ -13,24 +13,18 @@ return request_type;
 }
 var http = createObject();
 
-/* -------------------------- */
-/* INSERT */
-/* -------------------------- */
-/* Required: var nocache is a random number to add to request. This value solve an Internet Explorer cache issue */
+
 var nocache = 0;
 function insert() {
- // Optional: Show a waiting message in the layer with ID login_response
+
  document.getElementById('insert_response').innerHTML = "Just a second..."
- // Required: verify that all fileds is not empty. Use encodeURI() to solve some issues about character encoding.
+
 var name= document.getElementById('name').value;
 name=name.replace(/[^а-яА-Яa-z\.\s,-]/ig,"");
 var table=  document.getElementById('table').innerHTML;
-//encodeURI(document.getElementById('table').value);
 
-
- // Set te random number to add to URL request
  document.getElementById('insert_response').innerHTML = "Just a 2second..."
- // Pass the login variables like URL variable
+
 http.open('get', 'china_insert.php?name='+name+'&table='+table);
 http.onreadystatechange = insertReply;
 http.send(null);
@@ -39,7 +33,7 @@ http.send(null);
 function insertReply() {
 if(http.readyState == 4){ 
 var response = http.responseText;
-// else if login is ok show a message: "Site added+ site URL".
+
 
 document.getElementById('insert_response').innerHTML = response;
 if (/(добавлен)+/.test(response)) document.getElementById('name').value="";
@@ -59,9 +53,8 @@ else {
 //encodeURI(document.getElementById('table').value);
 
 
- // Set te random number to add to URL request
  document.getElementById('insert_response').innerHTML = "Just a second..."
- // Pass the login variables like URL variable
+
 http.open('get', 'china_insert_link.php?pupil='+pupil+'&teacher='+teacher);
 http.onreadystatechange = insertReply;
 document.getElementById('pupil').value="Выберите ученика";
